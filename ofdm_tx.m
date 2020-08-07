@@ -1,0 +1,12 @@
+start=64;
+rxs=yycp(start: start+255);
+z=fft(rxs);
+k=(angle(z(9)))/(9-1);
+n=(0:1:255)*k;
+a=cos(n)+i*sin(n);
+zz=z.*(a');
+figure;
+plot(real(zz),'g');
+hold on;
+plot(imag(zz),'r');
+grid on;
